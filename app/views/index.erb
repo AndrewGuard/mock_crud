@@ -1,8 +1,14 @@
 <div class="container">
   <h1>User Skills and Levels</h1>
-
-  <% @users.each do |user| %>
-    <p><%= user.skills %> </p>
-  <% end %>
-
 </div>
+
+<% @users.each do |user| %>
+<div class="container">
+  <p> <%= user.name %> </p>
+  <% user.skills.each do |skill| %>
+  <p><%= skill.name %> : <%= skill.context %> </p>
+  <% end %>
+</div>
+
+<% end %>
+

@@ -2,7 +2,7 @@
   <h1><%= current_user.name %>'s Skillz!</h1>
 
     <% current_user.skills.each do |skill| %>
-      <p><%= skill.name %> </p>
+      <p><%= skill.name %> : <%= skill.context %> </p>
     <% end %>
 </div>
 
