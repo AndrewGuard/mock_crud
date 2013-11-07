@@ -1,0 +1,25 @@
+<div class="container">
+  <h1><%= current_user.name %>'s Skillz!</h1>
+
+    <% current_user.skills.each do |skill| %>
+      <p><%= skill.name %> </p>
+    <% end %>
+</div>
+
+<div class="container">
+  <h1>Add a Skill!</h1>
+
+  <form  method="post" action="/user/<%= current_user.id %>">
+
+    <label class="add-skill" for="name">Name of Skill</label>
+    <input type="text" name="name" placeholder="skill">
+    <br>
+
+    <label class="add-skill" for="email">Context</label>
+    <input type="text" name="context" placeholder="technical or creative">
+    <br>
+
+    <div class="submit"><input type="submit" value="Update Skills"></div>
+  </form>
+
+</div>

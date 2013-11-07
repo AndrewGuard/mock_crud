@@ -41,7 +41,19 @@ end
 get '/users/new' do
   # render sign-up page
   @user = User.new
+  # @skills = Skills
   erb :sign_up
+end
+
+# User page
+get '/users/edit' do
+  erb :edit_user
+end
+
+# Edit User Skills
+post '/user/:id' do
+  current_user.skills << Skill.create(name: params[:name], context: params[:context])
+  redirect to '/'
 end
 
 post '/users' do
